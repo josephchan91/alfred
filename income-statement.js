@@ -2,6 +2,7 @@ const FIRST_ROW = 2;
 const LAST_ROW = 13;
 const MONTH = 6; // JANUARY = 1
 const YEAR = 2017;
+const COST_FILE = 'anarkyzt-cost.xlsx';
 
 const minDate = new Date(YEAR, MONTH-1, 1);
 let maxDate = new Date(YEAR, MONTH, 1);
@@ -12,7 +13,7 @@ console.log(`maxDate: ${maxDate}`);
 
 if (typeof require !== 'undefined') XLSX = require('xlsx');
 
-const workbook = XLSX.readFile('cost.xlsx');
+const workbook = XLSX.readFile(COST_FILE);
 
 const worksheetName = workbook.SheetNames[0];
 const worksheet = workbook.Sheets[worksheetName];
